@@ -45,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="compute.html.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="compute.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/Resources/views/Default/compute.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="238" selection-end="244" vertical-scroll-proportion="0.2932961" vertical-offset="0" max-vertical-offset="716">
+            <state line="14" column="23" selection-start="238" selection-end="244" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="300">
               <folding />
             </state>
           </provider>
@@ -75,16 +75,16 @@
       <file leaf-file-name="DefaultControllerTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/Tests/Controller/DefaultControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="14" column="81" selection-start="409" selection-end="409" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcmeCalculatorBundle.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/AcmeCalculatorBundle.php">
+      <file leaf-file-name="composer.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
+            <state line="20" column="32" selection-start="760" selection-end="760" vertical-scroll-proportion="0.41899443" vertical-offset="0" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -132,6 +132,8 @@
         <option value="$PROJECT_DIR$/src/Acme/CalculatorBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Acme/CalculatorBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Acme/CalculatorBundle/Resources/views/Default/compute.html.twig" />
+        <option value="$PROJECT_DIR$/src/Acme/CalculatorBundle/Tests/Controller/DefaultControllerTest.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -542,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/Tests/Controller/DefaultControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/AcmeCalculatorBundle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="740">
@@ -611,7 +606,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/Resources/views/Default/compute.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="238" selection-end="244" vertical-scroll-proportion="0.2932961" vertical-offset="0" max-vertical-offset="716">
+        <state line="14" column="23" selection-start="238" selection-end="244" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/CalculatorBundle/Tests/Controller/DefaultControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="81" selection-start="409" selection-end="409" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="32" selection-start="760" selection-end="760" vertical-scroll-proportion="0.41899443" vertical-offset="0" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
