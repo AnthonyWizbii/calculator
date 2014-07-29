@@ -1,0 +1,18 @@
+<h1>Calculator</h1>
+
+<form action="{{ path('acme_calculator_compute') }}">
+    <label for="left">Opérande gauche</label>
+    <input type="text" name="left" id="left" />
+
+    <select name="operator">
+        <option value="add">+</option>
+        <option value="substract">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+    </select>
+
+    <label for="right">Opérande droite</label>
+    <input type="text" name="right" id="right" />
+
+    <button>compute</button>
+</form>

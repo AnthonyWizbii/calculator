@@ -1,0 +1,15 @@
+<h1>Résultat</h1>
+
+{{ left }}
+{% if operator == "add" %}
+    +
+{% elseif operator == "substract" %}
+    -
+{% elseif operator == "multiply" %}
+    *
+{% elseif operator == "divide" %}
+    /
+{% else %}
+    wat ?
+{% endif %}
+{{ right }} = {{ result }}
