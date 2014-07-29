@@ -2,8 +2,11 @@
 
 namespace Acme\CalculatorBundle\Controller;
 
+use Acme\CalculatorBundle\Model\Operand;
+use Acme\CalculatorBundle\Model\Operator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use JMS\DiExtraBundle\Annotation as DI;
 
 class DefaultController extends Controller
 {
@@ -15,35 +18,30 @@ class DefaultController extends Controller
 
     public function computeAction(Request $req)
     {
-        $left     = $req->query->get('left');
-        $right    = $req->query->get('right');
-        $operator = $req->query->get('operator');
+        $left     = new Operand($req->query->get('left'));
+        $right    = new Operand($req->query->get('right'));
+        $operator = $this->getOperatorFactory()->getOperator($req->query->get('operator'));
+        $result   = $this->getCalculator()->compute($left, $right, $operator);
 
-        $result = null;
+        return $this->render('AcmeCalculatorBundle:Default:compute.html.twig', array(
+            'left' => $left->getValue(),
+            'right' => $right->getValue(),
+            'operator' => $operator->getLabel(),
+            'result' => $result->getValue()
+        ));
+    }
 
-        switch ($operator) {
-            case 'add':
-                $result = $left + $right;
-                break;
+    /**
+     * @return \Acme\CalculatorBundle\Service\OperatorFactory
+     */
+    public function getOperatorFactory() {
+        return $this->get('acme_calculator.operator_factory');
+    }
 
-            case 'substract':
-                $result = $left - $right;
-                break;
-
-            case 'multiply':
-                $result = $left * $right;
-                break;
-
-            case 'divide':
-                if ($right != 0) {
-                    $result = $left / $right;
-                }
-                break;
-        }
-
-        return $this->render('AcmeCalculatorBundle:Default:compute.html.twig', array('left' => $left,
-                                                                                     'right' => $right,
-                                                                                     'operator' => $operator,
-                                                                                     'result' => $result));
+    /**
+     * @return \Acme\CalculatorBundle\Service\Calculator
+     */
+    public function getCalculator() {
+        return $this->get('acme_calculator.calculator');
     }
 }
