@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new Acme\CalculatorBundle\AcmeCalculatorBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\AopBundle\JMSAopBundle(),
+            new Acme\CalculatorAPIBundle\AcmeCalculatorAPIBundle(),
+            new Acme\CalculatorUIBundle\AcmeCalculatorUIBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

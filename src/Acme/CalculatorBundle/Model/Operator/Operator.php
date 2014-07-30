@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Tonio
- * Date: 29/07/2014
- * Time: 14:09
- */
 
-namespace Acme\CalculatorBundle\Model;
+namespace Acme\CalculatorBundle\Model\Operator;
 
+abstract class Operator {
 
-class Operator {
     /**
      * @var string
      */
@@ -27,27 +21,11 @@ class Operator {
     }
 
     /**
-     * @param string $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return string
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param string $label
-     */
-    public function setLabel($label)
-    {
-        $this->label = $label;
     }
 
     /**
@@ -57,4 +35,11 @@ class Operator {
     {
         return $this->label;
     }
+
+    /**
+     * @param  Operand $left
+     * @param  Operand $right
+     * @return Result
+     */
+    public abstract function compute($left, $right);
 } 

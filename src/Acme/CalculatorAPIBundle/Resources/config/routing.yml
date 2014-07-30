@@ -1,0 +1,3 @@
+acme_calculator_api_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AcmeCalculatorAPIBundle:Default:index }

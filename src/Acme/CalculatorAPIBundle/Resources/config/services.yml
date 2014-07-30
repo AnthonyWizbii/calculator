@@ -1,0 +1,7 @@
+parameters:
+#    acme_calculator_api.example.class: Acme\CalculatorAPIBundle\Example
+
+services:
+#    acme_calculator_api.example:
+#        class: %acme_calculator_api.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

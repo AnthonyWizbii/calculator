@@ -9,17 +9,19 @@
 namespace Acme\CalculatorBundle\Tests\Service;
 
 
+use Acme\CalculatorBundle\Model\Operator\Add;
 use Acme\CalculatorBundle\Service\OperatorFactory;
 
 class OperatorFactoryTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
-     * @dataProvider getData
      */
-    public function getOperator($operatorId, $expectedLabel) {
+    public function getOperator() {
         $operatorFactory = new OperatorFactory();
 
-        $this->assertThat($operatorFactory->getOperator($operatorId)->getLabel(), $this->equalTo($expectedLabel));
+        $operatorFactory->addOperator(new Add());
+
+        $this->assertThat($operatorFactory->getOperator('add')->getLabel(), $this->equalTo('+'));
     }
 
     /**
@@ -29,15 +31,6 @@ class OperatorFactoryTest extends \PHPUnit_Framework_TestCase {
     public function getNotExistingOperator() {
         $operatorFactory = new OperatorFactory();
 
-        $operatorFactory->getOperator('');
-    }
-
-    public function getData() {
-        return array(
-            array('add', '+'),
-            array('substract', '-'),
-            array('multiply', '*'),
-            array('divide', '/'),
-        );
+        $operatorFactory->getOperator('add');
     }
 } 

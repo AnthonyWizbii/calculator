@@ -5,10 +5,9 @@
     <input type="text" name="left" id="left" />
 
     <select name="operator">
-        <option value="add">+</option>
-        <option value="substract">-</option>
-        <option value="multiply">*</option>
-        <option value="divide">/</option>
+        {% for operator in operators %}
+            <option value="{{ operator.id }}">{{ operator.label }}</option>
+        {% endfor %}
     </select>
 
     <label for="right">Opérande droite</label>

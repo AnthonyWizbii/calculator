@@ -19,17 +19,19 @@ class OperatorFactory {
     protected $operators;
 
     public function __construct() {
-        $this->operators = array(
-            "add" => new Operator("add", "+"),
-            "substract" => new Operator("substract", '-'),
-            "multiply" => new Operator("multiply", "*"),
-            "divide" => new Operator("divide", "/"),
-        );
+        $this->operators = array();
+    }
+
+    /**
+     * @param \Acme\CalculatorBundle\Model\Operator\Operator $operator
+     */
+    public function addOperator($operator) {
+        $this->operators[$operator->getId()] = $operator;
     }
 
     /**
      * @param  string $operatorId
-     * @return \Acme\CalculatorBundle\Model\Operator
+     * @return \Acme\CalculatorBundle\Model\Operator\Operator
      */
     public function getOperator($operatorId) {
         if (array_key_exists($operatorId, $this->operators)) {
@@ -37,5 +39,12 @@ class OperatorFactory {
         }
 
         throw new \Exception("This operator doesn't exist");
+    }
+
+    /**
+     * @return array
+     */
+    public function getOperators() {
+        return $this->operators;
     }
 }

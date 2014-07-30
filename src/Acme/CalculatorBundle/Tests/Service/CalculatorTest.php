@@ -20,12 +20,18 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase {
     public function computeAdd(){
         $left     = new Operand(3);
         $right    = new Operand(2);
-        $operator = new Operator('add', '+');
+
+        $operatorMock = $this->getMockBuilder('Acme\CalculatorBundle\Model\Operator\Operator')
+                             ->setMethods(array('compute'))
+                             ->disableOriginalConstructor()
+                             ->getMock();
+
+        $operatorMock->expects($this->once())
+                     ->method('compute')
+                     ->with($this->equalTo($left), $this->equalTo($right));
 
         $calculator = new Calculator();
-        $result = $calculator->compute($left, $right, $operator);
-
-        $this->assertThat($result->getValue(), $this->equalTo(5));
+        $calculator->compute($left, $right, $operatorMock);
     }
 
     /**
@@ -34,7 +40,7 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase {
     public function computeSubstract() {
         $left     = new Operand(3);
         $right    = new Operand(2);
-        $operator = new Operator('substract', '-');
+        $operator = new Operator\Substract();
 
         $calculator = new Calculator();
         $result = $calculator->compute($left, $right, $operator);
@@ -48,7 +54,7 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase {
     public function computeMultiply() {
         $left     = new Operand(3);
         $right    = new Operand(2);
-        $operator = new Operator('multiply', '*');
+        $operator = new Operator\Multiply();
 
         $calculator = new Calculator();
         $result = $calculator->compute($left, $right, $operator);
@@ -62,24 +68,11 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase {
     public function computeDivide() {
         $left     = new Operand(3);
         $right    = new Operand(2);
-        $operator = new Operator('divide', '/');
+        $operator = new Operator\Divide();
 
         $calculator = new Calculator();
         $result = $calculator->compute($left, $right, $operator);
 
         $this->assertThat($result->getValue(), $this->equalTo(1.5));
-    }
-
-    /**
-     * @test
-     * @expectedException \Exception
-     */
-    public function computeNone() {
-        $left     = new Operand(3);
-        $right    = new Operand(2);
-        $operator = new Operator('blabla', ' ');
-
-        $calculator = new Calculator();
-        $result = $calculator->compute($left, $right, $operator);
     }
 } 

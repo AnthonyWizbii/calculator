@@ -10,7 +10,7 @@ namespace Acme\CalculatorBundle\Tests\Model;
 
 use Acme\CalculatorBundle\Model\Operand;
 use Acme\CalculatorBundle\Model\Operation;
-use Acme\CalculatorBundle\Model\Operator;
+use Acme\CalculatorBundle\Model\Operator\Multiply;
 use Acme\CalculatorBundle\Model\Result;
 
 class OperationTest extends \PHPUnit_Framework_TestCase {
@@ -18,7 +18,7 @@ class OperationTest extends \PHPUnit_Framework_TestCase {
     public function testConstruct() {
         $left = new Operand(4);
         $right = new Operand(2);
-        $operator = new Operator("multiply", "*");
+        $operator = new Multiply();
         $result = new Result();
 
         $operation = new Operation($left, $right, $operator, $result);
