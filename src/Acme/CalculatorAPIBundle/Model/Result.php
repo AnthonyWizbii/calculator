@@ -6,12 +6,15 @@
  * Time: 14:10
  */
 
-namespace Acme\CalculatorBundle\Model;
+namespace Acme\CalculatorAPIBundle\Model;
 
+use JMS\Serializer\Annotation as JMS;
 
 class Result {
+
     /**
      * @var float
+     * @JMS\Type("double")
      */
     protected $value;
 

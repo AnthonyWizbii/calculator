@@ -10,8 +10,21 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/hello/Fabien');
+        $crawler = $client->request('GET', '/calculator/v1/3/2/add.json');
 
-        $this->assertTrue($crawler->filter('html:contains("Hello Fabien")')->count() > 0);
+        $aOperation = array(
+            'left' => 3,
+            'right' => 2,
+            'operator' => array(
+                'id' => 'add',
+                'label' => '+',
+            ),
+            'result' => 5
+        );
+
+        $this->assertThat(
+            $client->getInternalResponse()->getContent(),
+            $this->equalTo(json_encode(array('operation' => $aOperation)))
+        );
     }
 }

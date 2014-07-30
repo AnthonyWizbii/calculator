@@ -1,3 +1,17 @@
-acme_calculator_api_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: AcmeCalculatorAPIBundle:Default:index }
+acme_calculatorapi_default_json:
+    path:     /calculator/v1/{left}/{right}/{operator}.{_format}
+    defaults: { _controller: acme_calculatorapi.controller.default:jsonAction }
+    requirements:
+        _format: json
+
+acme_calculatorapi_default_xml:
+    path:     /calculator/v1/{left}/{right}/{operator}.{_format}
+    defaults: { _controller: acme_calculatorapi.controller.default:xmlAction }
+    requirements:
+        _format: xml
+
+acme_calculatorapi_default_getoperators:
+    path:     /calculator/v1/operators.{_format}
+    defaults: { _controller: acme_calculatorapi.controller.default:getOperatorsAction }
+    requirements:
+        _format: json

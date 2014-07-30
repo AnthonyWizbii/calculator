@@ -6,14 +6,14 @@
  * Time: 16:38
  */
 
-namespace Acme\CalculatorBundle\Model\Operator;
+namespace Acme\CalculatorAPIBundle\Model\Operator;
 
 use JMS\DiExtraBundle\Annotation as DI;
-use Acme\CalculatorBundle\Model\Result;
+use Acme\CalculatorAPIBundle\Model\Result;
 
 /**
- * @DI\Service("acme_calculator.operator.add")
- * @DI\Tag("acme_calculator.operator")
+ * @DI\Service("acme_calculatorapi.operator.add")
+ * @DI\Tag("acme_calculatorapi.operator")
  */
 class Add extends Operator {
 

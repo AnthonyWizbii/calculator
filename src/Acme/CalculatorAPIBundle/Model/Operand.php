@@ -6,12 +6,15 @@
  * Time: 14:07
  */
 
-namespace Acme\CalculatorBundle\Model;
+namespace Acme\CalculatorAPIBundle\Model;
 
+use JMS\Serializer\Annotation as JMS;
 
 class Operand {
+
     /**
      * @var float
+     * @JMS\Type("double")
      */
     protected $value;
 
@@ -33,6 +36,6 @@ class Operand {
      */
     public function getValue()
     {
-        return $this->value;
+        return intval($this->value);
     }
 } 

@@ -6,27 +6,31 @@
  * Time: 14:11
  */
 
-namespace Acme\CalculatorBundle\Model;
+namespace Acme\CalculatorAPIBundle\Model;
 
+use JMS\Serializer\Annotation as JMS;
 
 class Operation {
     /**
-     * @var Operand
+     * @var \Acme\CalculatorAPIBundle\Model\Operand
+     * @JMS\Type("Acme\CalculatorAPIBundle\Model\Operand")
      */
     protected $operandLeft;
 
     /**
-     * @var Operand
+     * @var \Acme\CalculatorAPIBundle\Model\Operand
+     * @JMS\Type("Acme\CalculatorAPIBundle\Model\Operand")
      */
     protected $operandRight;
 
     /**
-     * @var Operator
+     * @var \Acme\CalculatorAPIBundle\Model\Operator\Operator
      */
     protected $operator;
 
     /**
-     * @var Result
+     * @var \Acme\CalculatorAPIBundle\Model\Result
+     * @JMS\Type("Acme\CalculatorAPIBundle\Model\Result")
      */
     protected $result;
 

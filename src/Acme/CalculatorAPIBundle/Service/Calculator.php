@@ -6,19 +6,19 @@
  * Time: 14:37
  */
 
-namespace Acme\CalculatorBundle\Service;
+namespace Acme\CalculatorAPIBundle\Service;
 
 use JMS\DiExtraBundle\Annotation as DI;
 
 /**
- * @DI\Service("acme_calculator.calculator")
+ * @DI\Service("acme_calculatorapi.calculator")
  */
 class Calculator {
     /**
-     * @param  \Acme\CalculatorBundle\Model\Operand  $left
-     * @param  \Acme\CalculatorBundle\Model\Operand  $right
-     * @param  \Acme\CalculatorBundle\Model\Operator\Operator $operator
-     * @return \Acme\CalculatorBundle\Model\Result
+     * @param  \Acme\CalculatorAPIBundle\Model\Operand  $left
+     * @param  \Acme\CalculatorAPIBundle\Model\Operand  $right
+     * @param  \Acme\CalculatorAPIBundle\Model\Operator\Operator $operator
+     * @return \Acme\CalculatorAPIBundle\Model\Result
      */
     public function compute($left, $right, $operator){
         return $operator->compute($left, $right);

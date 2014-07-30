@@ -1,12 +1,12 @@
 <h1>Calculator</h1>
 
-<form action="{{ path('acme_calculator_compute') }}">
+<form action="{{ path('acme_calculatorui_compute') }}">
     <label for="left">Opérande gauche</label>
     <input type="text" name="left" id="left" />
 
     <select name="operator">
-        {% for operator in operators %}
-            <option value="{{ operator.id }}">{{ operator.label }}</option>
+        {% for id,label in operators %}
+            <option value="{{ id }}">{{ label }}</option>
         {% endfor %}
     </select>
 

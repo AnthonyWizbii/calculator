@@ -6,7 +6,3 @@ acme_calculator_api:
     resource: "@AcmeCalculatorAPIBundle/Resources/config/routing.yml"
     prefix:   /
 
-acme_calculator:
-    resource: "@AcmeCalculatorBundle/Resources/config/routing.yml"
-    prefix:   /
-

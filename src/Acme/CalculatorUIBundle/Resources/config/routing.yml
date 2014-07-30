@@ -1,8 +1,8 @@
-acme_calculator_homepage:
+acme_calculatorui_homepage:
     path:     /
-    defaults: { _controller: acme_calculator.controller.default:indexAction }
+    defaults: { _controller: acme_calculatorui.controller.default:indexAction }
 
-acme_calculator_compute:
+acme_calculatorui_compute:
     path:     /compute
-    defaults: { _controller: acme_calculator.controller.default:computeAction }
+    defaults: { _controller: acme_calculatorui.controller.default:computeAction }
 

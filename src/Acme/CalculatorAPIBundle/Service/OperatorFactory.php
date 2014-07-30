@@ -6,13 +6,13 @@
  * Time: 15:29
  */
 
-namespace Acme\CalculatorBundle\Service;
+namespace Acme\CalculatorAPIBundle\Service;
 
-use Acme\CalculatorBundle\Model\Operator;
+use Acme\CalculatorAPIBundle\Model\Operator;
 use JMS\DiExtraBundle\Annotation as DI;
 
 /**
- * @DI\Service("acme_calculator.operator_factory")
+ * @DI\Service("acme_calculatorapi.operator_factory")
  */
 class OperatorFactory {
 
@@ -23,7 +23,7 @@ class OperatorFactory {
     }
 
     /**
-     * @param \Acme\CalculatorBundle\Model\Operator\Operator $operator
+     * @param \Acme\CalculatorAPIBundle\Model\Operator\Operator $operator
      */
     public function addOperator($operator) {
         $this->operators[$operator->getId()] = $operator;
@@ -31,7 +31,7 @@ class OperatorFactory {
 
     /**
      * @param  string $operatorId
-     * @return \Acme\CalculatorBundle\Model\Operator\Operator
+     * @return \Acme\CalculatorAPIBundle\Model\Operator\Operator
      */
     public function getOperator($operatorId) {
         if (array_key_exists($operatorId, $this->operators)) {
