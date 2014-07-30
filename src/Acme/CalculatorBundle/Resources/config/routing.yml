@@ -1,8 +1,0 @@
-acme_calculator_homepage:
-    path:     /
-    defaults: { _controller: acme_calculator.controller.default:indexAction }
-
-acme_calculator_compute:
-    path:     /compute
-    defaults: { _controller: acme_calculator.controller.default:computeAction }
-
